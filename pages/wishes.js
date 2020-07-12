@@ -82,7 +82,7 @@ const Wishes = ({ data }) => {
 export default Wishes;
 
 export async function getServerSideProps(context) {
-  const url = process.env.NODE_ENV === 'development' ? 'http://' + context.req.headers.host : 'https://'
+  const url = 'http://' + context.req.headers.host;
   const res = await fetch(url + '/api/wishes/12');
   const data = await res.json();
   return { props: { data } }
