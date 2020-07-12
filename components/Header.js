@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const URL = 'https://iwish.vercel.app/'
 const Header = () => {
-  const [showShare, setShowShare] = useState(true);
+  const [showShare, setShowShare] = useState(false);
   return (
     <>
       <header className={styles.header}>
