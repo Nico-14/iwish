@@ -4,6 +4,7 @@ import Wish from '../components/Wish';
 import styles from '../styles/pages/wishes.module.scss';
 import Link from 'next/link';
 import LoadingBar from '../components/LoadingBar';
+import Head from 'next/head';
 
 const Wishes = ({ data }) => {
   const [wishes, setWishes] = useState(data?.wishes || []);
@@ -48,6 +49,10 @@ const Wishes = ({ data }) => {
 
   return (
     <>
+      <Head>
+        <title>Wishes - I wish...</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <LoadingBar loading={loading} />
       <Header />
       <main className="main">
