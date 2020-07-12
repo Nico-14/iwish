@@ -1,8 +1,8 @@
 import styles from '../styles/components/header.module.scss';
-import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, WhatsappIcon, WhatsappShareButton, TelegramShareButton, RedditIcon, RedditShareButton, VKShareButton, VKIcon, TelegramIcon } from 'react-share';
+import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, WhatsappIcon, WhatsappShareButton, TelegramShareButton, RedditIcon, RedditShareButton, TelegramIcon } from 'react-share';
 import { useState } from 'react';
 
-const URL = 'https://www.facebook.com/mateoledesmadev'
+const URL = 'https://iwish.vercel.app/'
 const Header = () => {
   const [showShare, setShowShare] = useState(true);
   return (

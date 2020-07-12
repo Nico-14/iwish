@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from '../styles/pages/index.module.scss';
 import Header from '../components/Header';
 import LoadingBar from '../components/LoadingBar';
