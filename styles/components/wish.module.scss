@@ -1,0 +1,13 @@
+.wish {
+  position: relative;
+  padding: 20px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #e6e6e6;
+  &__date {
+    position: absolute;
+    right: 20px;
+    bottom: 2px;
+    color: #424242;
+    font-size: 0.9rem;
+  }
+}
