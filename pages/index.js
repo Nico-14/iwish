@@ -60,6 +60,7 @@ export default function Home({ data }) {
             disabled={loading} maxLength="160"></input>
           <button className={styles['form__button'] + ' button'} disabled={loading}>Send</button>
           <span className={styles['form__message']}>{inputMessage}</span>
+          <span className={styles['form__character-count']}>{inputValue.length}/160</span>
         </form>
         <article className={styles.latest}>
           <header>
