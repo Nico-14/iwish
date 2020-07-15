@@ -83,7 +83,7 @@ export default function Home({ data }) {
 
 export async function getServerSideProps(context) {
   const url = 'http://' + context.req.headers.host;
-  const res = await fetch(url + '/api/wishes/6');
+  const res = await fetch(url + '/api/wishes/5');
   const data = await res.json();
   return { props: { data } }
 }
