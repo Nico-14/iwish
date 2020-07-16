@@ -8,8 +8,7 @@ const LoadingBar = ({ loading }) => {
     let interval;
     if (loading || ending && progress < 1) {
       interval = setInterval(() => {
-        console.log(loading, (loading && progress < 0.8 ? 0.001 : 0.04))
-        setProgress(progress + (loading && progress < 0.8 ? 0.001 : 0.04));
+        setProgress(progress + (loading && progress < 0.8 ? 0.001 : ending ? 0.04 : 0));
       }, 10);
     } else if (!loading && !ending && progress > 0 && progress < 1) {
       setEnding(true);
