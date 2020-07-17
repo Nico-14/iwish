@@ -1,10 +1,10 @@
 import firebase from '../../../lib/firebase';
 
 export default (req, res) => new Promise(async (resolve) => {
-  if (req.method == 'POST' && 'wish' in req.body && req.body?.wish.trim().length > 6 && req.body?.wish.length <= 160) {
+  if (req.method == 'POST' && 'wish' in req.body && req.body?.wish.trim().length > 5 && req.body?.wish.length <= 130) {
     try {
       await firebase.collection('wishes').add({
-        wish: req.body.wish,
+        wish: req.body.wish.trim(),
         date: new Date(),
       });
       res.status(200).json({ wish: req.body.wish });

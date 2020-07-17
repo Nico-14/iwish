@@ -14,16 +14,16 @@ export default function Home({ data }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (inputValue.trim().length < 6) {
-      setInputMessage('El deseo tiene que tener más de 5 carácteres');
-    } else if (inputValue.length > 160) {
-      setInputMessage('El deseo no puede tener más de 160 carácteres');
+      setInputMessage('You can\'nt use less than 6 characters');
+    } else if (inputValue.trim().length > 130) {
+      setInputMessage('You can\'nt use more than 130 characters');
     } else {
       setLoading(true);
       try {
         const res = await fetch('/api/wishes/add', {
           method: 'POST',
           body: JSON.stringify({
-            wish: inputValue,
+            wish: inputValue.trim(),
           }),
           headers: {
             'Content-Type': 'application/json',
@@ -54,13 +54,15 @@ export default function Home({ data }) {
         <form className={styles.form} onSubmit={handleSubmit}>
           <input className={styles['form__input']} placeholder="I wish..." value={inputValue} onChange={
             ({ currentTarget }) => {
-              setInputValue(currentTarget.value);
-              setInputMessage('');
+              if (currentTarget.value.trim().length <= 130) {
+                setInputValue(currentTarget.value);
+                setInputMessage('');
+              }
             }}
-            disabled={loading} maxLength="160"></input>
+            disabled={loading}></input>
           <button className={styles['form__button'] + ' button'} disabled={loading}>Send</button>
           <span className={styles['form__message']}>{inputMessage}</span>
-          <span className={styles['form__character-count']}>{inputValue.length}/160</span>
+          <span className={styles['form__character-count']}>{inputValue.trim().length}/130</span>
         </form>
         <article className={styles.latest}>
           <header>
